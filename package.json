@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf build && mkdir build",
     "build": "yarn clean &  cross-env NODE_ENV=production rollup -c",
-    "start": "yarn clean &  cross-env NODE_ENV=development nollup --hot --content-base build --port 9000",
+    "start": "yarn clean &  cross-env NODE_ENV=development nollup --hot --content-base build --port 9003",
     "lint": "$(yarn bin)/eslint src",
     "test": "cross-env NODE_ENV=test  jest",
     "coverage": "cross-env NODE_ENV=test  jest --coverage --colors",
@@ -66,10 +66,14 @@
   },
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-three-fiber": "^4.0.16",
+    "three": "^0.113.2"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/config/jest/setup.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/jest/setup.js"
+    ],
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     },
