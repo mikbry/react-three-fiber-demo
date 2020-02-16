@@ -1,8 +1,8 @@
-// From react-three-fiber
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
+import './App.css';
 
-function Box() {
+function Box(props) {
   // This reference will give us direct access to the mesh
   const mesh = useRef();
 
@@ -17,6 +17,8 @@ function Box() {
 
   return (
     <mesh
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
       ref={mesh}
       scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       onClick={() => setActive(!active)}
